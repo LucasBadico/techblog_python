@@ -1,20 +1,21 @@
 from student_curricullum import StudentCurricullum
 import pytest
+
 @pytest.fixture
 def curricullum():
     student = { 'name': 'Lucas Badico' }
     grades = [{
-        'name': 'grego',
+        'subject': 'grego',
         'score': 10,
         'credits': 5,
     },
     {
-        'name': 'grego',
+        'subject': 'grego',
         'score': 10,
         'credits': 10,
     },
     {
-        'name': 'grego',
+        'subject': 'grego',
         'score': 10,
     }]
     curricullum = StudentCurricullum(('Master of Ministry', student, grades))
@@ -35,9 +36,10 @@ class TestStudentCurricullum():
     
     def test_curricullum_grades_item_has_properties(self, curricullum):
         grade = curricullum.grades[0]
-        assert grade['name'] == 'grego'
+        assert grade['subject'] == 'grego'
         assert grade['credits'] == 5
         assert grade['score'] == 10
     
     def test_curricullum_has_calculeted_total_score(self, curricullum):
         assert curricullum.total_score == 10
+        
