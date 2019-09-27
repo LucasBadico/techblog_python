@@ -1,5 +1,5 @@
 from copy import deepcopy
-class Grade():
+class ClassRoom():
     def __init__(self, attributes):
         subject, professors, weekly_class, students = attributes
         self.subject = subject
